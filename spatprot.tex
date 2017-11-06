@@ -1,0 +1,467 @@
+\section{Spatial proteomics}
+
+\subsection{The LOPIT pipeline}
+
+\subsection*{Introduction}
+\label{sec:spintro}
+
+\begin{frame}{Regulations}
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{Figures2/regulation.jpg}
+  \end{figure}
+\end{frame}
+
+\label{sec:spspatprot}
+
+\begin{frame}{Cell organisation}
+  \begin{center}
+    \includegraphics[width=1\linewidth]{Figures/Animal_cell_structure.png} \\
+    \textbf{\textcolor{Blue}{Spatial proteomics}} is the systematic
+    study of protein localisations.
+  \end{center}
+
+  \tiny Image from Wikipedia
+  \url{http://en.wikipedia.org/wiki/Cell_(biology)}.
+\end{frame}
+
+
+\begin{frame}{Spatial proteomics - Why?}
+  \begin{block}{Localisation is function} 
+    \begin{itemize}
+    \item The cellular sub-division allows cells to establish a range
+      of distinct micro-environments, each favouring different
+      biochemical reactions and interactions and, therefore, allowing
+      each compartment to fulfil a particular functional role.          
+    \item Localisation and sequestration of proteins within
+      sub-cellular niches is a fundamental mechanism for the
+      post-translational regulation of protein function.         
+    \end{itemize}
+  \end{block}    
+\end{frame}
+
+\begin{frame}{Spatial proteomics - Why?}
+  \begin{block}{Mis-localisation}   
+    Disruption of the targeting/trafficking process alters proper
+    sub-cellular localisation, which in turn perturb the cellular
+    functions of the proteins.  
+    \begin{itemize}
+    \item Abnormal protein localisation leading to the loss of functional
+      effects in diseases \citep{Laurila2009}.    
+    \item Disruption of the nuclear/cytoplasmic transport (nuclear
+      pores) have been detected in many types of carcinoma cells
+      \citep{Kau2004}.
+    \end{itemize}      
+  \end{block}
+
+  \begin{block}{Re-localisation in} 
+    \begin{itemize}
+    \item \textcolor{Blue}{Differentiation}: Tfe3 in mouse ESC
+      \citep{Betschinger:2013}.
+    \item \textcolor{Blue}{Metabolism}: changes in carbon sources, elemental
+      limitations.
+    \end{itemize}
+  \end{block}
+
+\end{frame}
+
+
+\subsubsection*{Experimental designs}
+\label{sec:expdesign}
+
+\begin{frame}{Spatial proteomics - How, experimentally}
+  \begin{figure}
+    \includegraphics[width=.8\linewidth]{Figures/F02-expdesigns.pdf}
+    \caption{Organelle proteomics approaches \citep{Gatto:2010}}
+  \end{figure}
+\end{frame}
+
+
+% \begin{frame}{Microscopy}
+%   \begin{columns}[t]
+%     \begin{column}[T]{0.5\textwidth}      
+%       \begin{figure}
+%         \includegraphics[width=.7\linewidth]{Figures2/Localisations02eng.jpg}
+%         \caption{\textbf{Fluorescent protein fusion} localisation of
+%         proteins using GFP tagging. (from Wikipedia)}
+%       \end{figure}
+%     \end{column}
+%     \begin{column}[T]{0.49\textwidth}
+%       \begin{centering}
+%         \begin{figure}
+%           \includegraphics[width=.49\linewidth]{Figures2/172H11blueredgreen.jpg} 
+%           \includegraphics[width=.49\linewidth]{Figures2/34C71blueredgreen.jpg}
+%           \caption{\textbf{Immunofluorescence}: ZFPL1, GO (left) and FHL2, mainly localized to
+%           actin filaments and focal adhesion sites. Also detected in
+%           the nucleus (right). (from the Human Protein Atlas)}
+%         \end{figure}
+%       \end{centering}      
+%     \end{column}
+%   \end{columns}        
+% \end{frame}
+
+\begin{frame}{Fusion proteins and immunofluorescence}
+  \begin{center}
+    \includegraphics[width=.35\linewidth]{Figures2/Localisations02eng.jpg}        
+    \includegraphics[width=.45\linewidth]{figures/if_selected.jpg}    
+  \end{center}
+\end{frame}
+
+\begin{frame}{Fusion proteins and immunofluorescence}
+  \begin{figure}
+    \centering
+    \includegraphics[angle=-90, width=.8\linewidth]{Figures2/Disc-IF-IP.png} \\
+    \includegraphics[angle=-90, width=.8\linewidth]{Figures2/Disc-N-C.png}
+    \caption{Example of discrepancies between IF and FPs as well as
+      between FP tagging at the N and C termini (Stadler et al., 2013).}
+  \end{figure}
+\end{frame}
+
+\subsubsection*{Gradient approaches}
+\label{sec:grad}
+
+\begin{frame}{Spatial proteomics - How, experimentally}
+  \begin{figure}
+    \includegraphics[width=.8\linewidth]{Figures/F02-expdesigns.pdf}
+    \caption{Organelle proteomics approaches
+      \citep{Gatto:2010}. Gradient approaches: \cite{Dunkley:2006},
+      \cite{Foster2006}.}
+  \end{figure}
+  $\Rightarrow$ \textbf{Explorative/discovery approches},
+  \textcolor{Blue}{\textbf{global localisation maps}}.
+\end{frame}
+
+
+\begin{frame}{}
+  \begin{figure}
+    % \includegraphics[width=.8\linewidth]{Figures/F03-protocols-8plex.pdf}
+    % \includegraphics[width=.5\linewidth]{figures/expdesign.pdf}
+    \includegraphics[width=.39\linewidth]{figures/workflow_primary.pdf}
+  \end{figure} 
+\end{frame}
+
+\subsection*{Data analysis}
+\label{sec:comp}
+
+\subsubsection*{The data}
+\label{sec:data}
+ 
+\begin{frame}{Quantitation data and organelle markers}
+  \begin{center}
+    \begin{tabular}{|l|llll||l|}
+      \hline
+      & Fraction$_{\text{1}}$ & Fraction$_{\text{2}}$ & \ldots{} & Fraction$_{\text{m}}$ & markers\\
+      \hline
+      p$_{\text{1}}$ & q$_{\text{1,1}}$ & q$_{\text{1,2}}$ & \ldots{} & q$_{\text{1, m}}$ & unknown \\
+      p$_{\text{2}}$ & q$_{\text{2,1}}$ & q$_{\text{2,2}}$ & \ldots{} & q$_{\text{2, m}}$ & \textcolor{Red}{$loc_{1}$}\\
+      p$_{\text{3}}$ & q$_{\text{3,1}}$ & q$_{\text{3,2}}$ & \ldots{} & q$_{\text{3, m}}$ & unknown \\
+      p$_{\text{4}}$ & q$_{\text{4,1}}$ & q$_{\text{4,2}}$ & \ldots{} & q$_{\text{4, m}}$ & \textcolor{Blue}{$loc_{i}$}\\
+      \vdots & \vdots & \vdots & \vdots & \vdots & \vdots\\
+      p$_{\text{j}}$ & q$_{\text{j,1}}$ & q$_{\text{j,2}}$ & \ldots{} & q$_{\text{j, m}}$ & unknown \\
+      \hline
+    \end{tabular}
+  \end{center}
+\end{frame}
+
+\subsubsection*{Visualisation}
+\label{sec:viz}
+
+\begin{frame}{Visualisation and classification}
+  \begin{figure}
+    \centering
+    \includegraphics[width=.6\linewidth]{Figures/F04-analyses.pdf}
+    \caption{From \cite{Gatto:2010}, \textit{Arabidopsis thaliana} data
+      from \cite{Dunkley:2006}}
+  \end{figure}   
+\end{frame}
+
+\subsubsection*{Machine learning}
+\label{sec:ml}
+
+\begin{frame}{Data analysis}
+  \begin{centering}
+    \raisebox{-0.5\height}{\includegraphics[width=.57\linewidth]{./Figures2/Fig1-data-a.pdf}}
+    \raisebox{-0.5\height}{\includegraphics[width=.41\linewidth]{./Figures2/Fig1-data-b.pdf}}
+
+    \begin{block}{Supervised machine learning}    
+      Using labelled marker proteins to match unlabelled proteins (of
+      unknown localisation) with similar profiles and classify them as
+      residents to the markers organelle class.
+    \end{block}
+  \end{centering}
+\end{frame}
+
+
+\begin{frame}{Current approaches - supervised ML}
+  \begin{figure}[h]
+    \centering 
+    \includegraphics[width=.3\linewidth]{Figures/svm-params-1.pdf}
+    \includegraphics[width=.6\linewidth]{Figures/svm-params-2.pdf}    
+    \caption{Support vector machines classifier with a radial basis
+      kernel function, using the
+      \href{http://bioconductor.org/packages/release/bioc/html/pRoloc.html}{\texttt{pRoloc}}
+      Bioconductor package\footnote{\tiny
+        \url{www.bioconductor.org/packages/release/bioc/html/pRoloc.html}}
+      \citep{Gatto:2014}.}
+  \end{figure}
+\end{frame}
+
+% \begin{frame}{}
+%   \begin{figure}
+%     \includegraphics[width=.7\linewidth]{figures/F1boxplots.pdf}
+%     \caption{Comparing classifiers}
+%   \end{figure} 
+% \end{frame}
+
+
+\begin{frame}{Limitations}
+  \begin{columns}[t]
+    \begin{column}[T]{0.43\textwidth}
+      \begin{centering}
+        \includegraphics[width=1\linewidth]{Figures/tan2009r1org.pdf}
+      \end{centering} 
+    \end{column}
+    \begin{column}[T]{0.56\textwidth}      
+      \includegraphics[width=1\linewidth]{Figures/Animal_cell_structure.png}
+    \end{column}
+  \end{columns}          
+  Incomplete annotation, and therefore lack of training data, for
+  many/most organelles. \textit{Drosophila} data from \cite{Tan2009}.
+\end{frame}
+
+\begin{frame}{Novelty detection}
+  \begin{figure}
+    \includegraphics[width=.48\linewidth]{Figures/tan2009r1org.pdf}
+    \includegraphics[width=.5\linewidth]{Figures/pdres2fig.pdf}
+    \caption{Left: \textit{Drosophila} data from
+      \cite{Tan2009}. Right: Semi-supervised learning,
+      \cite{Breckels:2013}.}
+  \end{figure} 
+\end{frame}
+
+% \begin{frame}
+%   \centering    
+%   \begin{columns}[t]
+%     \begin{column}[T]{0.4\textwidth}
+%       \begin{figure}[h]    
+%         \includegraphics[width=.9\linewidth]{Figures/tan2009r1org.pdf} \\
+%         \includegraphics[width=.9\linewidth]{Figures/pdres2fig.pdf}
+%       \end{figure}
+%     \end{column}
+%     \begin{column}[T]{0.59\textwidth}         
+%       \begin{figure}[h]    
+%         \includegraphics[width=.9\linewidth]{Figures/phenodisco.pdf} 
+%       \end{figure}
+%     \end{column}
+%   \end{columns}
+%   % \caption{The \texttt{phenoDisco} algorithm \citep{Breckels:2013}.}
+% \end{frame}
+
+\subsection{Improving on LOPIT}
+
+\begin{frame}{Improving on LOPIT}
+  \centering
+  \begin{tabular}{| p{5cm} | p{5cm} |}
+    \hline
+    \makecell{LOPIT\\ \cite{Dunkley:2006}}    & \makecell{\textbf{Computational}:\\ \textit{transfer learning}\\ \cite{Breckels:2016}} \\
+    \hline
+    \makecell{\textbf{Experimental}:\\ \textit{hyperLOPIT}\\ \cite{Christoforou:2016} \\ \cite{Mulvey:2017}} &  \\
+    \hline    
+  \end{tabular}
+\end{frame}
+
+\subsubsection{Experimental advances: hyperLOPIT}
+
+\subsubsection{Computational advances: Transfer learning}
+
+\begin{frame}
+  What about annotation data from repositories such as \underline{GO},
+  sequence features, signal peptide, transmembrane domains, images,
+  prediction software, \ldots
+
+  \begin{block}{}<+->
+    \begin{itemize}
+    \item From a \underline{user perspective}: \textbf{"free/cheap"}
+      vs. expensive
+    \item Abundant (all proteins, 100s of features) vs. (experimentally)
+      limited/\textbf{targeted} (1000s of proteins, 6 -- 20 of features)
+    \item For localisation in \underline{system at hand}: \textit{low}
+      vs. high \textbf{quality}
+    \item \textbf{Static} vs. \textbf{dynamic}
+    \end{itemize}
+  \end{block}
+
+
+  \begin{block}{}<+->
+    \begin{center}
+      \textcolor{Blue}{\textbf{number GO features $\gg$ experimental
+          fractions\\ $\Rightarrow$ dilution of experimental data}}
+    \end{center}
+  \end{block}
+
+\end{frame}
+
+
+
+\begin{frame}
+
+  \begin{block}{Goal}
+    Support/complement the primary target domain (experimental data)
+    with auxiliary data (annotation) features without compromising the
+    integrity of our primary data. 
+
+    \bigskip 
+
+    Updated experimental design for 
+
+    \begin{itemize}
+    \item primary/experimental data
+    \end{itemize}
+  
+    and 
+
+    \begin{itemize}
+    \item auxiliary/annotation data
+    \end{itemize}
+
+  \end{block}
+
+  \begin{small}
+    \cite{Breckels:2016} \textit{Learning from heterogeneous data
+      sources: an application in spatial proteomics.}  PLoS Comput
+    Biol. DOI:\href{10.1371/journal.pcbi.1004920}{http://dx.doi.org/10.1371/journal.pcbi.1004920}.
+
+  \end{small}
+
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+    \includegraphics[width=.7\linewidth]{figures/workflow.pdf}      
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \textbf{Transfer learnig}, based on \cite{Wu:2004}:
+  \begin{columns}[t]
+    \begin{column}[T]{0.5\textwidth}            
+      \begin{block}{Class-weighted kNN}      
+        \begin{equation*}
+          \label{eq:translearn}
+          V(c_i)_j = \theta^* n_{ij}^{P} + (1 - \theta^*) n_{ij}^{A}
+        \end{equation*}
+      \end{block}
+    \end{column}
+    \begin{column}[T]{0.4\textwidth} 
+      \includegraphics[width=1\linewidth]{figures/pca-lopit-andy-e14.pdf} \\
+    \end{column}    
+  \end{columns}
+  \begin{block}{Linear programming SVM}
+    \begin{equation*}\label{eq:translearn2}
+      f(\bx, \bv; \bal_P, \bal_A, b) = \sum_{l=1}^m y_l \left[ \alpha_l^P
+        K^P(\bx_l, \bx) + \alpha_l^A K^A(\bv_l, \bv) \right] + b
+    \end{equation*}
+  \end{block}
+\end{frame}
+
+
+% \include{indtransalgo}
+
+% \begin{frame}{Internally (searching for best $\theta$)}
+%   \begin{figure}
+%     \centering
+%     \includegraphics[width=\linewidth]{figures/smooth-f1-weights.pdf}    
+%     \caption{Left: Mouse stem cells (e14tg2a). Right: Human Embryonic
+%     Kidney 293 (HEK293)}
+%   \end{figure}
+% \end{frame}
+
+
+\begin{frame}
+  % \includegraphics[width=.6\linewidth]{figures/thetaByClass.pdf}
+  % \includegraphics[width=.39\linewidth]{figures/bubbleWeights.pdf}
+  \includegraphics[width=1\linewidth]{figures/e14.pdf}
+  \\
+  \scriptsize
+  Data from mouse stem cells (E14TG2a).
+\end{frame}
+
+
+\begin{frame}{}
+  \includegraphics[width=.5\linewidth]{/home/lg390/Pictures/Figures/2016-PLoSCB-TL-classifierDiscriminationPowerk5.pdf}
+  \includegraphics[width=.5\linewidth]{/home/lg390/Pictures/Figures/2016-PLoSCB-TL-roc-new.pdf}
+\end{frame}
+
+\subsection{Biological applications}
+
+\begin{frame}
+  \begin{itemize}
+  \item Multi-localisation
+  \item Trans-localisation
+  \end{itemize}
+  Defined in \cite{Gatto:2014a}, A foundation for reliable spatial proteomics data analysis.
+\end{frame}
+
+\subsubsection{Dual-localisation}
+
+\begin{frame}
+  \textcolor{Blue}{\textbf{Dual-localisation}} Proteins may be
+  present simultaneously in several organelles (e.g. trafficking).      
+  \begin{columns}
+    \begin{column}{.5\textwidth}
+      \includegraphics[width=1\linewidth]{figures/dual-loc.pdf}<+->
+    \end{column}
+    \begin{column}{.5\textwidth}<+->
+      \centering
+      \includegraphics[width=.8\linewidth]{figures/Tfe3.png}\\
+      \tiny From \cite{Betschinger:2013} \\
+      \includegraphics[width=1\linewidth]{figures/Tfe3.pdf}
+    \end{column}  
+  \end{columns}
+\end{frame}
+
+\subsubsection{Trans-localisation}
+
+\begin{frame}{Spatial dynamics}
+  \textcolor{Blue}{\textbf{Trans-localisation}} Changes in
+  localisation upon perturbations. 
+  \begin{center}
+    \includegraphics[width=.48\textwidth]{./figures/yeastgg-glu.pdf}
+    \includegraphics[width=.48\textwidth]{./figures/yeastgg-gly.pdf} 
+  \end{center}
+\end{frame}
+
+
+\begin{frame}
+  \begin{columns}[t]
+    \begin{column}[T]{0.5\textwidth}            
+      \textcolor{Blue}{\textbf{Spatial dynamics}}
+      \bigskip
+      \begin{scriptsize}
+        \center
+        $d_1 = dist(profile_{condition_1}^{rep_1}, profile_{condition_2}^{rep_1})$
+        $d_2= dist(profile_{condition_1}^{rep_2}, profile_{condition_2}^{rep_2})$         
+      \end{scriptsize}
+      \includegraphics[width=1\linewidth]{./figures/yeastgg-ma.pdf}          
+    \end{column}
+    \begin{column}[T]{0.5\textwidth}            
+      \includegraphics[width=.8\textwidth]{./figures/yeastgg-glu-hl.pdf}\\
+      \includegraphics[width=.8\textwidth]{./figures/yeastgg-gly-hl.pdf} 
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Beyond organelles: application to PPI/Protein complexes}
+
+  \begin{figure}[t]
+    \includegraphics[width=.6\linewidth]{figures/knn-x1f-1.pdf}
+    \caption{Data on proteasome complexes from Fabre \textit{et
+        al.}  Mol Syst Biol (2015), DOI:
+      \url{10.15252/msb.20145497}}
+  \end{figure}
+
+\end{frame}
+
+
