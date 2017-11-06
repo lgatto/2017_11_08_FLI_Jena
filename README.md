@@ -1,6 +1,7 @@
 - Talk at the Leibniz-Institut für Alternsforschung
 - Host: Alessandro Ori
 - Duration: 30 - 40 minutes
+- Slides: http://bit.ly/20171108FLI
 
 ## Topics
 1. Spatial proteomics, applications, and findings
@@ -10,9 +11,7 @@
    development of Bioc packages.
 
 
-## Talk
-
-Mapping the sub-cellular proteome
+## Mapping the sub-cellular proteome
 
 In biology, localisation is function. Cells display a complex
 sub-cellular structure with numerous distinct niches responsible for
