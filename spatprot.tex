@@ -200,9 +200,7 @@
     \caption{Support vector machines classifier with a radial basis
       kernel function, using the
       \href{http://bioconductor.org/packages/release/bioc/html/pRoloc.html}{\texttt{pRoloc}}
-      Bioconductor package\footnote{\tiny
-        \url{www.bioconductor.org/packages/release/bioc/html/pRoloc.html}}
-      \citep{Gatto:2014}.}
+      Bioconductor package \citep{Gatto:2014}.}
   \end{figure}
 \end{frame}
 
@@ -260,26 +258,62 @@
 \subsection{Improving on LOPIT}
 
 \begin{frame}{Improving on LOPIT}
+
+  Improving is obtaining better sub-cellular resolution to increase
+  the number of protein that can be \textbf{confidently} assigned to a
+  sub-cellular niche.
+
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{/home/lg390/Pictures/Figures/E14-lopit-hyperlopit.pdf}    
+    \caption{E14TG2a embryonic stem cells: old (left) \textit{vs.} new, better
+      resolved (right) experiments (\cite{Christoforou:2016}).}
+  \end{figure}
+  
+\end{frame}  
+
+\begin{frame}{Improving on LOPIT}
   \centering
   \begin{tabular}{| p{5cm} | p{5cm} |}
     \hline
     \makecell{LOPIT\\ \cite{Dunkley:2006}}    & \makecell{\textbf{Computational}:\\ \textit{transfer learning}\\ \cite{Breckels:2016}} \\
     \hline
-    \makecell{\textbf{Experimental}:\\ \textit{hyperLOPIT}\\ \cite{Christoforou:2016} \\ \cite{Mulvey:2017}} &  \\
+    \makecell{\textbf{Experimental}:\\ \textit{hyperLOPIT}\\ \cite{Christoforou:2016} \\ \cite{Mulvey:2017}} & \makecell{Biological\\discoveries}  \\
     \hline    
   \end{tabular}
 \end{frame}
 
 \subsubsection{Experimental advances: hyperLOPIT}
 
-\subsubsection{Computational advances: Transfer learning}
+\begin{frame}{hyperLOPIT}
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=.8\linewidth]{/home/lg390/Pictures/Figures/ncomms9992-hyperlopit-f1.jpg}
+    \caption{From \cite{Christoforou:2016} \textit{A draft map of the
+        mouse pluripotent stem cell spatial proteome}.}
+    \label{fig:hyperlopit}
+  \end{figure}
+\end{frame}
 
 \begin{frame}
-  What about annotation data from repositories such as \underline{GO},
-  sequence features, signal peptide, transmembrane domains, images,
-  prediction software, \ldots
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{/home/lg390/Pictures/Figures/E14-lopit-hyperlopit-rep1.pdf}
+    \caption{LOPIT on 8 fractions (using iTRAQ 8-plex) and 1109
+      proteins \textit{vs.}  hyperLOPIT on 10 fractions (using TMT
+      10-plex) and SPS-MS$^3$ for 5032 proteins.}
+  \end{figure}
 
-  \begin{block}{}<+->
+\end{frame}
+
+\subsubsection{Computational advances: Transfer learning}
+
+\begin{frame}{Transfer learning}
+  What about annotation data from repositories such as the Gene Ontogy
+  (GO), sequence features, signal peptide, transmembrane domains,
+  images, prediction software, \ldots
+
+  \begin{block}{}
     \begin{itemize}
     \item From a \underline{user perspective}: \textbf{"free/cheap"}
       vs. expensive
@@ -291,49 +325,22 @@
     \end{itemize}
   \end{block}
 
+\end{frame}
 
-  \begin{block}{}<+->
-    \begin{center}
-      \textcolor{Blue}{\textbf{number GO features $\gg$ experimental
-          fractions\\ $\Rightarrow$ dilution of experimental data}}
-    \end{center}
+\begin{frame}{Transfer learning}
+  What about annotation data from repositories such as the
+  \underline{Gene Ontology (GO)}, sequence features, signal peptide,
+  transmembrane domains, images, prediction software, \ldots
+
+  \begin{block}{Transfer learning}
+    Support/complement the \textbf{primary} target domain
+    (experimental data) with \textbf{auxiliary} data (annotation,
+    imaging, PPI, ...)  features without compromising the integrity of
+    our primary data \citep{Breckels:2016}.
   \end{block}
 
 \end{frame}
 
-
-
-\begin{frame}
-
-  \begin{block}{Goal}
-    Support/complement the primary target domain (experimental data)
-    with auxiliary data (annotation) features without compromising the
-    integrity of our primary data. 
-
-    \bigskip 
-
-    Updated experimental design for 
-
-    \begin{itemize}
-    \item primary/experimental data
-    \end{itemize}
-  
-    and 
-
-    \begin{itemize}
-    \item auxiliary/annotation data
-    \end{itemize}
-
-  \end{block}
-
-  \begin{small}
-    \cite{Breckels:2016} \textit{Learning from heterogeneous data
-      sources: an application in spatial proteomics.}  PLoS Comput
-    Biol. DOI:\href{10.1371/journal.pcbi.1004920}{http://dx.doi.org/10.1371/journal.pcbi.1004920}.
-
-  \end{small}
-
-\end{frame}
 
 \begin{frame}
   \begin{center}
@@ -388,18 +395,29 @@
 
 
 \begin{frame}{}
-  \includegraphics[width=.5\linewidth]{/home/lg390/Pictures/Figures/2016-PLoSCB-TL-classifierDiscriminationPowerk5.pdf}
-  \includegraphics[width=.5\linewidth]{/home/lg390/Pictures/Figures/2016-PLoSCB-TL-roc-new.pdf}
+
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=.8\linewidth]{/home/lg390/Pictures/Figures/E14-lopit-hyperlopit.pdf} \\
+    \includegraphics[width=.4\linewidth]{/home/lg390/Pictures/Figures/2016-PLoSCB-TL-classifierDiscriminationPowerk5.pdf}
+    \includegraphics[width=.4\linewidth]{/home/lg390/Pictures/Figures/2016-PLoSCB-TL-roc-new.pdf}    
+    \caption{{\footnotesize From \cite{Breckels:2016} \textit{Learning from
+          heterogeneous data sources: an application in spatial
+          proteomics}.}
+    }
+\label{fig:tlres}
+  \end{figure}
+  
 \end{frame}
 
 \subsection{Biological applications}
 
-\begin{frame}
+\begin{frame}{Biological applications}
   \begin{itemize}
   \item Multi-localisation
   \item Trans-localisation
   \end{itemize}
-  Defined in \cite{Gatto:2014a}, A foundation for reliable spatial proteomics data analysis.
+  Dependent on good sub-cellular resolution.
 \end{frame}
 
 \subsubsection{Dual-localisation}
