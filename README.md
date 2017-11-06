@@ -25,3 +25,10 @@ experimental and computational technologies can be used to produce
 proteome-wide proteins localisation maps, and how these findings are
 supported by an open and collaborative suite of software packages. 
 
+## Licence 
+
+These slides are distributed under a creative common
+[CC-BY license](http://creativecommons.org/licenses/by/4.0/). You are
+free to share (copy and redistribute the material in any medium or
+format) and adapt (remix, transform, and build upon the material) for
+any purpose, even commercially.
