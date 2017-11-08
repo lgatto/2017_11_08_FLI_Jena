@@ -49,7 +49,7 @@
     \begin{itemize}
     \item \textcolor{Blue}{Differentiation}: Tfe3 in mouse ESC
       \citep{Betschinger:2013}.
-    \item \textcolor{Blue}{Activation} of biological processed.
+    \item \textcolor{Blue}{Activation} of biological processes.
     \end{itemize}
     Examples later.
   \end{block}  
@@ -161,10 +161,10 @@
       \hline
       & Fraction$_{\text{1}}$ & Fraction$_{\text{2}}$ & \ldots{} & Fraction$_{\text{m}}$ & markers\\
       \hline
-      p$_{\text{1}}$ & q$_{\text{1,1}}$ & q$_{\text{1,2}}$ & \ldots{} & q$_{\text{1, m}}$ & unknown \\
-      p$_{\text{2}}$ & q$_{\text{2,1}}$ & q$_{\text{2,2}}$ & \ldots{} & q$_{\text{2, m}}$ & \textcolor{Red}{$loc_{1}$}\\
-      p$_{\text{3}}$ & q$_{\text{3,1}}$ & q$_{\text{3,2}}$ & \ldots{} & q$_{\text{3, m}}$ & unknown \\
-      p$_{\text{4}}$ & q$_{\text{4,1}}$ & q$_{\text{4,2}}$ & \ldots{} & q$_{\text{4, m}}$ & \textcolor{Blue}{$loc_{i}$}\\
+      p$_{\text{1}}$ & q$_{\text{1,1}}$ & q$_{\text{1,2}}$ & \ldots{} & q$_{\text{1,m}}$ & unknown \\
+      p$_{\text{2}}$ & q$_{\text{2,1}}$ & q$_{\text{2,2}}$ & \ldots{} & q$_{\text{2,m}}$ & \textcolor{Red}{$loc_{1}$}\\
+      p$_{\text{3}}$ & q$_{\text{3,1}}$ & q$_{\text{3,2}}$ & \ldots{} & q$_{\text{3,m}}$ & unknown \\
+      p$_{\text{4}}$ & q$_{\text{4,1}}$ & q$_{\text{4,2}}$ & \ldots{} & q$_{\text{4,m}}$ & \textcolor{Blue}{$loc_{i}$}\\
       \vdots & \vdots & \vdots & \vdots & \vdots & \vdots\\
       p$_{\text{j}}$ & q$_{\text{j,1}}$ & q$_{\text{j,2}}$ & \ldots{} & q$_{\text{j, m}}$ & unknown \\
       \hline
@@ -205,8 +205,9 @@
   \begin{figure}[h]
     \centering 
     \includegraphics[width=\linewidth]{figs_local/hyperlopit-class.pdf}
-    \caption{Support vector machines classifier on the embryonic stem
-      cell data from \cite{Christoforou:2016}.}
+    \caption{Support vector machines classifier (after classification
+      cutoff) on the embryonic stem cell data from
+      \cite{Christoforou:2016}.}
   \end{figure}
 \end{frame}
 
@@ -226,13 +227,13 @@
   many/most organelles. \textit{Drosophila} data from \cite{Tan2009}.
 \end{frame}
 
-\begin{frame}{Novelty detection}
+\begin{frame}{Semi-supervised learning: novelty detection}
   \begin{figure}
     \includegraphics[width=.48\linewidth]{Figures/tan2009r1org.pdf}
     \includegraphics[width=.5\linewidth]{Figures/pdres2fig.pdf}
     \caption{Left: Original \textit{Drosophila} data from
-      \cite{Tan2009}. Right: After semi-supervised learning,
-      \cite{Breckels:2013}.}
+      \cite{Tan2009}. Right: After semi-supervised learning and
+      classification, \cite{Breckels:2013}.}
   \end{figure} 
 \end{frame}
 
@@ -272,6 +273,13 @@
 \end{frame}  
 
 \begin{frame}{Improving on LOPIT}
+
+  Improving is obtaining better sub-cellular resolution to increase
+  the number of protein that can be \textbf{confidently} assigned to a
+  sub-cellular niche $\Rightarrow$ \textbf{biological discoveries}.
+
+  \bigskip
+  
   \centering
   \begin{tabular}{| p{5cm} | p{5cm} |}
     \hline
@@ -308,10 +316,10 @@
 \subsubsection{Computational advances: Transfer learning}
 
 \begin{frame}{Computational advances: Transfer learning}
-  What about using addition data data from repositories such as the
-  Gene Ontogy (GO), sequence features (pseudo-aminoacid composition),
-  signal peptide, transmembrane domains (length, number, ...), images
-  (IF, FP), prediction software, \ldots
+  What about using \textbf{addition data}, such as annotations from
+  the Gene Ontogy (GO), sequence features (pseudo aminoacid
+  composition), signal peptide, trans-membrane domains (length, number,
+  ...), images (IF, FP), prediction software, \ldots
 
   \begin{block}{}
     \begin{itemize}
@@ -412,7 +420,7 @@
 
 \subsection{Biological applications}
 
-\begin{frame}{Biological applications}
+\begin{frame}{Biological discoveries}
   \begin{itemize}
   \item Multi-localisation
   \item Trans-localisation
@@ -426,8 +434,8 @@
   \textcolor{Blue}{\textbf{Dual-localisation}} Proteins may be present
   simultaneously in several organelles (e.g. trafficking). Simulation
   on \textit{A. thaliana} data from \cite{Dunkley:2006}
-  (left). Example from embryonic stem cells \citep{Christoforou:2016}
-  (right).
+  \citep{Gatto:2014a} (left). Example from embryonic stem cells
+  \citep{Christoforou:2016} (right).
   \begin{columns}
     \begin{column}{.5\textwidth}
       \includegraphics[width=1\linewidth]{figures/dual-loc.pdf}<+->
@@ -446,8 +454,8 @@
 \begin{frame}{Spatial dynamics}
   \begin{block}{Trans-localisation event during monocyte to macrophage
       differenciation}
-    Goal: to investigate the effect of LPS-mediated inflammatory
-    response in human monocytic cells (THP-1)    
+    Investigate the effect of LPS-mediated inflammatory response in
+    human monocytic cells (THP-1)
   \end{block}
 
   \begin{block}{Data}
@@ -455,8 +463,8 @@
     \item Triplicate \textbf{temporal} profiling (0, 2, 4, 6, 12, 24
       hours).
     \item Triplicate \textbf{spatial} profiling (0 vs 12 hours) -
-      early trafficking components, before actual morphological
-      differentiation at 24h.
+      early trafficking, before actual morphological differentiation
+      at 24h.
     \end{itemize}
   \end{block}
 
