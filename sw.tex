@@ -11,7 +11,7 @@
   
 \end{frame}
 
-\begin{frame}{Software for spatial proteomics}
+\begin{frame}{Software for mass spectrometry and (spatial) proteomics}
   \begin{block}{}
     \href{http://bioconductor.org/}{\textbf{Bioconductor}} Open
     source, enable \textbf{reproducible research}, enables
@@ -20,6 +20,15 @@
 
     \begin{small}
       \begin{itemize}
+      \item
+        \href{http://bioconductor.org/packages/release/bioc/html/mzR.html}{\texttt{mzR}}
+        -- low level access to raw and identification mass
+        spectrometry data \citep{Chambers:2012}
+        
+      \item
+        \href{http://bioconductor.org/packages/release/bioc/html/MSnbase.html}{\texttt{MSnbase}}
+        -- infrastructure to handle quantitative data and meta-data
+        \citep{Gatto:2012} ($_{\widetilde{~}}$500 unique IP download/month in 2016).
       \item
         \href{http://bioconductor.org/packages/release/bioc/html/pRoloc.html}{\texttt{pRoloc}}
         and
@@ -41,23 +50,43 @@
 \end{frame}
 
 
+\begin{frame}
+\includegraphics{/home/lg390/Pictures/Figures/spatprotpkgsdep.pdf}
+\end{frame}
+
+
+\begin{frame}{\url{http://www.bioconductor.org}}
+\includegraphics[width=\linewidth]{./figs_local/biocwww.png}
+\end{frame}
 
 \section{Open development}
 
 
 \begin{frame}{}
- 
+  \href{http://bioconductor.org/}{\textbf{Bioconductor}} Open source,
+  and \textbf{coordinateod pen development}, enabling
+  \textbf{reproducible research}, enables understanding of the data
+  (not a black box) and \textbf{drive scientific innovation}.
   \begin{itemize}
-  \item What is Collaborative and open development?
-  \item Use case: \texttt{MSnbase} and \texttt{mzR}: contributors and
-    shared infrastructure for MS-based proteomics and metabolomics.
+  \item Bioconductor code team (lead by Dr. Martin Morgan)
+  \item Common infrastructure
+  \item Common documentation standards
+  \item Common testing infrastructure
+  \item Open package technical peer review
   \end{itemize}
-  
 \end{frame}
 
+\begin{frame}
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=.8\linewidth]{./figs_local/g.png}
+    \caption{Dependency graph containing 41 MS and proteomics-tagged
+      packages (out of 100+) and their dependencies. Showing all
+      packages and deps would produce a big hairball.}
+  \end{figure}
+\end{frame}
 
 \begin{frame}{Use case}
-
   \begin{figure}[h]
     \centering
     \includegraphics[width=.8\linewidth]{/home/lg390/Documents/www/lgatto.github.io/images/msnbase-contributors-2.png}
