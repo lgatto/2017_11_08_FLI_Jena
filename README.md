@@ -24,6 +24,11 @@ experimental and computational technologies can be used to produce
 proteome-wide proteins localisation maps, and how these findings are
 supported by an open and collaborative suite of software packages. 
 
+## Citation
+
+Gatto, Laurent. (2017, November). *Mapping the sub-cellular
+proteome*. Zenodo. http://doi.org/10.5281/zenodo.1042726
+
 ## Licence 
 
 These slides are distributed under a creative common
