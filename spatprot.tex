@@ -192,24 +192,14 @@
 \end{frame}
 
 
-\begin{frame}{Current approaches - supervised ML}
+\begin{frame}{Supervised ML}
   \begin{figure}[h]
     \centering 
-    \includegraphics[width=.3\linewidth]{Figures/svm-params-1.pdf}
-    \includegraphics[width=.6\linewidth]{Figures/svm-params-2.pdf}    
-    \caption{Support vector machines classifier with a radial basis
-      kernel function, using the
-      \href{http://bioconductor.org/packages/release/bioc/html/pRoloc.html}{\texttt{pRoloc}}
-      Bioconductor package \citep{Gatto:2014}.}
+    \includegraphics[width=\linewidth]{figs_local/hyperlopit-class.pdf}
+    \caption{Support vector machines classifier on the embryonic stem
+      cell data from \cite{Christoforou:2016}.}
   \end{figure}
 \end{frame}
-
-% \begin{frame}{}
-%   \begin{figure}
-%     \includegraphics[width=.7\linewidth]{figures/F1boxplots.pdf}
-%     \caption{Comparing classifiers}
-%   \end{figure} 
-% \end{frame}
 
 
 \begin{frame}{Limitations}
@@ -288,9 +278,9 @@
 \begin{frame}{hyperLOPIT}
   \begin{figure}[h]
     \centering
-    \includegraphics[width=.8\linewidth]{/home/lg390/Pictures/Figures/ncomms9992-hyperlopit-f1.jpg}
-    \caption{From \cite{Christoforou:2016} \textit{A draft map of the
-        mouse pluripotent stem cell spatial proteome}.}
+    \includegraphics[width=.8\linewidth]{/home/lg390/Pictures/Figures/nprot-hyperlopit-2017-026-F1.jpg}
+    \caption{From \cite{Mulvey:2017} \textit{Using hyperLOPIT to
+        perform high-resolution mapping of the spatial proteome}.}
     \label{fig:hyperlopit}
   \end{figure}
 \end{frame}
@@ -299,9 +289,9 @@
   \begin{figure}[h]
     \centering
     \includegraphics[width=1\linewidth]{/home/lg390/Pictures/Figures/E14-lopit-hyperlopit-rep1.pdf}
-    \caption{LOPIT on 8 fractions (using iTRAQ 8-plex) and 1109
-      proteins \textit{vs.}  hyperLOPIT on 10 fractions (using TMT
-      10-plex) and SPS-MS$^3$ for 5032 proteins.}
+    \caption{E14TG2a LOPIT on 8 fractions (using iTRAQ 8-plex) and
+      1109 proteins \textit{vs.}  hyperLOPIT on 10 fractions (using
+      TMT 10-plex) and SPS-MS$^3$ for 5032 proteins.}
   \end{figure}
 
 \end{frame}
@@ -423,8 +413,9 @@
 \subsubsection{Dual-localisation}
 
 \begin{frame}
-  \textcolor{Blue}{\textbf{Dual-localisation}} Proteins may be
-  present simultaneously in several organelles (e.g. trafficking).      
+  \textcolor{Blue}{\textbf{Dual-localisation}} Proteins may be present
+  simultaneously in several organelles (e.g. trafficking). Example
+  from embryonic stem cells \citep{Christoforou:2016}.
   \begin{columns}
     \begin{column}{.5\textwidth}
       \includegraphics[width=1\linewidth]{figures/dual-loc.pdf}<+->
@@ -434,6 +425,7 @@
       \includegraphics[width=.8\linewidth]{figures/Tfe3.png}\\
       \tiny From \cite{Betschinger:2013} \\
       \includegraphics[width=1\linewidth]{figures/Tfe3.pdf}
+      Example from 
     \end{column}  
   \end{columns}
 \end{frame}
@@ -441,32 +433,56 @@
 \subsubsection{Trans-localisation}
 
 \begin{frame}{Spatial dynamics}
-  \textcolor{Blue}{\textbf{Trans-localisation}} Changes in
-  localisation upon perturbations. 
-  \begin{center}
-    \includegraphics[width=.48\textwidth]{./figures/yeastgg-glu.pdf}
-    \includegraphics[width=.48\textwidth]{./figures/yeastgg-gly.pdf} 
-  \end{center}
+  \begin{block}{Trans-localisation monocyte to macrophage
+      differenciation}
+    Goal: to investigate the effect of LPS-mediated inflammatory
+    response in human monocytic cells (THP-1)    
+  \end{block}
+
+  \begin{block}{Data}
+    \begin{itemize}
+    \item Triplicate \textbf{temporal} profiling (0, 2, 4, 6, 12, 24
+      hours).
+    \item Triplicate \textbf{spatial} profiling (0 vs 12 hours) -
+      early trafficking components, before actual morphological
+      differentiation at 24h.
+    \end{itemize}
+  \end{block}
+
+  Work lead by \textbf{Dr Claire Mulvey}, Cambridge Centre for
+  Proteomics.
+  
 \end{frame}
 
 
+
 \begin{frame}
-  \begin{columns}[t]
-    \begin{column}[T]{0.5\textwidth}            
-      \textcolor{Blue}{\textbf{Spatial dynamics}}
-      \bigskip
-      \begin{scriptsize}
-        \center
-        $d_1 = dist(profile_{condition_1}^{rep_1}, profile_{condition_2}^{rep_1})$
-        $d_2= dist(profile_{condition_1}^{rep_2}, profile_{condition_2}^{rep_2})$         
-      \end{scriptsize}
-      \includegraphics[width=1\linewidth]{./figures/yeastgg-ma.pdf}          
-    \end{column}
-    \begin{column}[T]{0.5\textwidth}            
-      \includegraphics[width=.8\textwidth]{./figures/yeastgg-glu-hl.pdf}\\
-      \includegraphics[width=.8\textwidth]{./figures/yeastgg-gly-hl.pdf} 
-    \end{column}
-  \end{columns}
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{./figs_local/lps.pdf}
+    \caption{Spatial maps: unstimulated and LPS-treated.}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{./figs_local/lps-pkc.pdf}
+    \caption{Relocation of Protein Kinase C alpha and beta from the
+      cytosol to the plasma membrane, driving maturation into a
+      differentiated macrophage phenotype.}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{./figs_local/lps-stat.pdf}
+    \caption{Relocation of STAT6 from the cytosol to the Nucleus,
+      activating anti-bacterial and anti-viral-like
+      response. Validated by microscopy and see also
+      \cite{Chen:2011}.}
+  \end{figure}
 \end{frame}
 
 
